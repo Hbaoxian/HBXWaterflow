@@ -29,23 +29,53 @@ typedef enum {
 /*
  *  数据源
  */
-- (NSInteger)numberOfCellInWaterFlowView:(HBXWaterFlowView *)waterFlow;
+- (NSInteger)numberOfCellInWaterflowView:(HBXWaterFlowView *)waterflow;
 /*
  *  返回waterFlowViewCell
  */
-- (HBXWaterFlowViewCell *)waterFLowView:(HBXWaterFlowView *)waterFlow  cellAtIndex:(NSInteger)index;
+- (HBXWaterFlowViewCell *)waterflowView:(HBXWaterFlowView *)waterFlow  cellAtIndex:(NSInteger)index;
+
+@optional
+/*
+ *  一共有多少列
+ */
+
+- (NSInteger)numberOfColumsInWaterFlow:(HBXWaterFlowView *)waterflow;
+
+@end
 
 
+@protocol HBXWaterflowDelegate <NSObject>
 
+@optional
 
+/*
+ *  返回每个cell的高度
+ */
+- (CGFloat)waterflow:(HBXWaterFlowView *)waterflow  heightAtIndex:(NSInteger)index;
+/*
+ *  选中index位置的cell
+ */
+- (void)waterflow:(HBXWaterFlowView *)waterflow didSelectedAtIndex:(NSInteger)index;
+/*
+ *  返回间距
+ */
+- (CGFloat)waterFlow:(HBXWaterFlowView *)water  marginForType:(HBXWaterFlowMarginType)type;
 
 
 @end
 
 
 
-
-
 @interface HBXWaterFlowView : UIScrollView
+
+@property (nonatomic, assign) id<HBXWaterFlowDataSource> dataSource;
+@property (nonatomic, assign) id<HBXWaterflowDelegate> delegate;
+
+- (void)reloadData;
+- (CGFloat)cellWidth;
+- (id)dequeueReusableCellWithIdentifier:(NSString *)identifier;
+
+
 
 @end
