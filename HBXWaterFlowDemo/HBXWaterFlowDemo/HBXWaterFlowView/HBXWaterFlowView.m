@@ -8,9 +8,9 @@
 
 #import "HBXWaterFlowView.h"
 
-#define HMWaterflowViewDefaultCellH 70
-#define HMWaterflowViewDefaultMargin 8
-#define HMWaterflowViewDefaultNumberOfColumns 3
+#define HBXWaterflowViewDefaultCellH 70
+#define HBXWaterflowViewDefaultMargin 8
+#define HBXWaterflowViewDefaultNumberOfColumns 3
 
 @interface HBXWaterFlowView ()
 
@@ -44,6 +44,41 @@
     return self;
 
 }
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [self reloadData];
+}
+
+- (CGFloat)cellWidth {
+    NSInteger numberOfColumns = [self numberOsColumns];
+    CGFloat leftM = [self marginForType:HBXWaterFlowMarginTypeLeft];
+    CGFloat rightM = [self marginForType:HBXWaterFlowMarginTypeRight];
+    CGFloat columnsM = [self marginForType:HBXWaterFlowMarginTypeColumn];
+    return self.bounds.size.width - leftM - rightM - (numberOfColumns - 1)*columnsM/numberOfColumns;
+}
+
+
+/**
+ *  总列数
+ */
+- (NSInteger)numberOsColumns {
+    if ([self.dataSource respondsToSelector:@selector(numberOfColumsInWaterFlow:)]) {
+        return [self.dataSource numberOfColumsInWaterFlow:self];
+    }else {
+        return HBXWaterflowViewDefaultNumberOfColumns;
+    }
+
+}
+/**
+ *  间距
+ */
+- (CGFloat)marginForType:(HBXWaterFlowMarginType)waterflowMargin {
+    if ([self.delegate respondsToSelector:@selector(waterFlow:marginForType:)]) {
+        return [self.delegate waterFlow:self marginForType:waterflowMargin];
+    }
+     return  HBXWaterflowViewDefaultNumberOfColumns;
+}
+
 
 
 
