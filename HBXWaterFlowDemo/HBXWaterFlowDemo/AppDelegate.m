@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "HBXMainViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -16,6 +18,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    CGRect frame = [UIScreen mainScreen].bounds;
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:frame];
+    
+    HBXMainViewController *controller = [[HBXMainViewController alloc] init];
+    
+    UINavigationController *naverController = [[UINavigationController alloc] initWithRootViewController:controller];
+    self.window.rootViewController = naverController;
+    
+    
+    [self.window makeKeyWindow];
+    [self.window makeKeyAndVisible];
+    
     // Override point for customization after application launch.
     return YES;
 }

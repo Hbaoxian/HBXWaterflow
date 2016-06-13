@@ -13,6 +13,9 @@
 		813D52E01D0E9AF6006370D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813D52DE1D0E9AF6006370D6 /* Main.storyboard */; };
 		813D52E21D0E9AF7006370D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 813D52E11D0E9AF7006370D6 /* Assets.xcassets */; };
 		813D52E51D0E9AF7006370D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813D52E31D0E9AF7006370D6 /* LaunchScreen.storyboard */; };
+		813D52EE1D0E9D18006370D6 /* HBXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D52ED1D0E9D18006370D6 /* HBXMainViewController.m */; };
+		813D52F51D0E9FEE006370D6 /* HBXWaterFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D52F41D0E9FEE006370D6 /* HBXWaterFlowView.m */; };
+		813D52F81D0EA0B1006370D6 /* HBXWaterFlowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 813D52F71D0EA0B1006370D6 /* HBXWaterFlowViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		813D52E11D0E9AF7006370D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		813D52E41D0E9AF7006370D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		813D52E61D0E9AF7006370D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		813D52EC1D0E9D18006370D6 /* HBXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBXMainViewController.h; sourceTree = "<group>"; };
+		813D52ED1D0E9D18006370D6 /* HBXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBXMainViewController.m; sourceTree = "<group>"; };
+		813D52F31D0E9FEE006370D6 /* HBXWaterFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBXWaterFlowView.h; sourceTree = "<group>"; };
+		813D52F41D0E9FEE006370D6 /* HBXWaterFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBXWaterFlowView.m; sourceTree = "<group>"; };
+		813D52F61D0EA0B1006370D6 /* HBXWaterFlowViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBXWaterFlowViewCell.h; sourceTree = "<group>"; };
+		813D52F71D0EA0B1006370D6 /* HBXWaterFlowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBXWaterFlowViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +67,13 @@
 		813D52D41D0E9AF6006370D6 /* HBXWaterFlowDemo */ = {
 			isa = PBXGroup;
 			children = (
+				813D52EF1D0E9FB5006370D6 /* HBXWaterFlowView */,
 				813D52D81D0E9AF6006370D6 /* AppDelegate.h */,
 				813D52D91D0E9AF6006370D6 /* AppDelegate.m */,
 				813D52DB1D0E9AF6006370D6 /* ViewController.h */,
 				813D52DC1D0E9AF6006370D6 /* ViewController.m */,
+				813D52EC1D0E9D18006370D6 /* HBXMainViewController.h */,
+				813D52ED1D0E9D18006370D6 /* HBXMainViewController.m */,
 				813D52DE1D0E9AF6006370D6 /* Main.storyboard */,
 				813D52E11D0E9AF7006370D6 /* Assets.xcassets */,
 				813D52E31D0E9AF7006370D6 /* LaunchScreen.storyboard */,
@@ -77,6 +89,17 @@
 				813D52D61D0E9AF6006370D6 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		813D52EF1D0E9FB5006370D6 /* HBXWaterFlowView */ = {
+			isa = PBXGroup;
+			children = (
+				813D52F31D0E9FEE006370D6 /* HBXWaterFlowView.h */,
+				813D52F41D0E9FEE006370D6 /* HBXWaterFlowView.m */,
+				813D52F61D0EA0B1006370D6 /* HBXWaterFlowViewCell.h */,
+				813D52F71D0EA0B1006370D6 /* HBXWaterFlowViewCell.m */,
+			);
+			path = HBXWaterFlowView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +172,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813D52EE1D0E9D18006370D6 /* HBXMainViewController.m in Sources */,
+				813D52F81D0EA0B1006370D6 /* HBXWaterFlowViewCell.m in Sources */,
+				813D52F51D0E9FEE006370D6 /* HBXWaterFlowView.m in Sources */,
 				813D52DD1D0E9AF6006370D6 /* ViewController.m in Sources */,
 				813D52DA1D0E9AF6006370D6 /* AppDelegate.m in Sources */,
 				813D52D71D0E9AF6006370D6 /* main.m in Sources */,
@@ -214,7 +240,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -252,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -300,6 +326,7 @@
 				813D52EB1D0E9AF7006370D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
