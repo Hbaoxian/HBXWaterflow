@@ -10,4 +10,7 @@
 
 @interface HBXWaterFlowViewCell : UIView
 
+@property (nonatomic, copy) NSString *identifier;
+
+
 @end
